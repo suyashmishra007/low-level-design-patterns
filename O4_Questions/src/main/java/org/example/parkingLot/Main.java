@@ -16,26 +16,25 @@ public class Main {
         // Creating Admin account
         Admin admin = new Admin("Jack", "Pass12345");
 
-//         Adding Parking floors
+        // Adding Parking floors
         ParkingFloor parkingFloor1 = new ParkingFloor("PF1001");
         ParkingFloor parkingFloor2 = new ParkingFloor("PF1002");
         admin.addParkingFloor(parkingFloor1);
-
         admin.addParkingFloor(parkingFloor2);
 
+        // Adding Entry panels
         EntryPanel entryPanel1 = new EntryPanel("ENT001");
         EntryPanel entryPanel2 = new EntryPanel("ENT002");
         admin.addEntrancePanel(entryPanel1);
         admin.addEntrancePanel(entryPanel2);
-//
-//
-//         Adding Exit panels
+
+        // Adding Exit panels
         ExitPanel exitPanel1 = new ExitPanel("EXT001");
         ExitPanel exitPanel2 = new ExitPanel("EXT002");
         admin.addExitPanel(exitPanel1);
         admin.addExitPanel(exitPanel2);
 
-        List<ParkingFloor> listOfParkingFloors = parkingLot.getListOfParkingFloor();
+        List < ParkingFloor > listOfParkingFloors = parkingLot.getListOfParkingFloor();
         String firstFloorID = null;
 
         if (!listOfParkingFloors.isEmpty()) {
@@ -44,7 +43,7 @@ public class Main {
                 firstFloorID = firstFloor.getParkingFloorID();
             }
         }
-//
+
         // Adding Parking spots to the floor
         ParkingSpot carParkingSpot1 = new CarSpot("CPS1001");
         admin.addParkingSpot(firstFloorID, carParkingSpot1);
@@ -55,23 +54,21 @@ public class Main {
         ParkingSpot bikeParkingSpot2 = new MotorcycleSpot("MSP1002");
         admin.addParkingSpot(firstFloorID, bikeParkingSpot2);
 
-        System.out.println(parkingLot.getListOfParkingFloor());
-//
-//         Creating vehicles
+
+        // Creating vehicles
         Car car1 = new Car("TN23890");
         Car car2 = new Car("TN99234");
         MotorCycle bike = new MotorCycle("TN34909");
 
-//
         // Call the display board
         parkingFloor1.showDisplayBoard();
 
         // Park the vehicle
-//        ParkingTicket ticketForCar1 = entryPanel1.getParkingTicket(car1);
-//        System.out.println("*** Parking ticket for car1 *** \n" +  ticketForCar1);
-//        // Checkout the vehicle
-//        ticketForCar1 = exitPanel2.checkout(ticketForCar1);
-//        System.out.println("*** Parking ticket for car1 *** \n" + ticketForCar1);
+        ParkingTicket ticketForCar1 = entryPanel1.getParkingTicket(car1);
+        System.out.println("*** Parking ticket for car1 *** \n" + ticketForCar1);
+        //        // Checkout the vehicle
+        ticketForCar1 = exitPanel2.checkout(ticketForCar1);
+        System.out.println("*** Parking ticket for car1 *** \n" + ticketForCar1.getAmount());
     }
 }
 

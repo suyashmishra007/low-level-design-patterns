@@ -2,9 +2,11 @@ package org.example.parkingLot;
 
 
 import org.example.parkingLot.parkingSpotVehicles.ParkingSpot;
+import org.example.parkingLot.parkingSpotVehicles.ParkingSpotType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ParkingLot {
     private static ParkingLot instance;
@@ -40,14 +42,16 @@ public class ParkingLot {
     }
 
     public ParkingSpot vacateParkingSpot(String parkingSpotID) {
-        for (ParkingFloor floor : parkingFloors) {
-            // TODO: For Each is not working.
-//            for (ParkingSpot spot : floor.getListOfParkingSpots()) {
-//                if (spot.getParkingSpotID().equals(parkingSpotID)) {
-//                    spot.vacateVehicleFromSpot();
-//                    return spot;
-//                }
-//            }
+        for (ParkingFloor floor : this.parkingFloors) {
+            Map<ParkingSpotType, List<ParkingSpot>> listOfParkingSpots = floor.getListOfParkingSpots();
+            for (List<ParkingSpot> spots : listOfParkingSpots.values()) {
+                for (ParkingSpot spot : spots) {
+                    if (spot.getParkingSpotID().equals(parkingSpotID)) {
+                        spot.vacateVehicleFromSpot();
+                        return spot;
+                    }
+                }
+            }
         }
         return null;
     }

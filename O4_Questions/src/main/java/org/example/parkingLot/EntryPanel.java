@@ -34,8 +34,6 @@ public class EntryPanel {
     }
 
     private ParkingTicket generateParkingTicket(Vehicle vehicle, String parkingFloorID, String parkingSpotID) {
-        // TODO: Changes
-//        return new ParkingTicket(vehicle.getVehicleType(), vehicle.getVehicleRegisterNumber(), parkingFloorID, parkingSpotID).setStartTime();
         return new ParkingTicket(vehicle.getVehicleType(), vehicle.getVehicleRegisterNumber(), parkingFloorID, parkingSpotID).setStartTime();
     }
 }

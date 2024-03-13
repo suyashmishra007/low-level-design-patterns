@@ -3,6 +3,7 @@ import org.example.parkingLot.parkingSpotVehicles.ParkingSpot;
 import org.example.parkingLot.parkingSpotVehicles.ParkingSpotType;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 
 public class ExitPanel {
     private String exitPanelID;
@@ -36,7 +37,9 @@ public class ExitPanel {
     }
 
     private long calculateDurationInHours(ParkingTicket parkingTicket) {
-        Duration duration = Duration.between(parkingTicket.getStartTime(), parkingTicket.getEndTime());
+        LocalDateTime startTime = parkingTicket.getStartTime();
+        LocalDateTime endTime = parkingTicket.getEndTime();
+        Duration duration = Duration.between(startTime, endTime);
         return duration.toHours();
     }
 }
