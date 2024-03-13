@@ -1,6 +1,7 @@
-package org.example.parkingLot.parking;
+package org.example.parkingLot;
 
 
+import org.example.parkingLot.parkingSpotVehicles.ParkingSpot;
 import org.example.parkingLot.vehicle.Vehicle;
 
 public class EntryPanel {

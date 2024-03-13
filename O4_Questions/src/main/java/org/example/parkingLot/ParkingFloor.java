@@ -1,4 +1,7 @@
-package org.example.parkingLot.parking;
+package org.example.parkingLot;
+import org.example.parkingLot.DisplayBoard;
+import org.example.parkingLot.parkingSpotVehicles.ParkingSpot;
+import org.example.parkingLot.parkingSpotVehicles.ParkingSpotType;
 import org.example.parkingLot.vehicle.Vehicle;
 import org.example.parkingLot.vehicle.VehicleType;
 
@@ -8,6 +11,13 @@ import java.util.Map;
 import java.util.ArrayList;
 
 public class ParkingFloor {
+    @Override
+    public String toString() {
+        return "ParkingFloor{" +
+                "parkingSpots=" + parkingSpots +
+                '}';
+    }
+
     private Map<ParkingSpotType, List<ParkingSpot>> parkingSpots;
     private String parkingFloorID;
     private DisplayBoard displayBoard;

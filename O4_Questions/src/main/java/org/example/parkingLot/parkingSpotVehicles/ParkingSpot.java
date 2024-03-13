@@ -1,9 +1,8 @@
-package org.example.parkingLot.parking;
-
+package org.example.parkingLot.parkingSpotVehicles;
 
 import org.example.parkingLot.vehicle.Vehicle;
 
-public abstract class ParkingSpot {
+public class ParkingSpot {
     private String parkingSpotID;
     private boolean isSpotAvailable;
     private Vehicle vehicle;
@@ -45,4 +44,3 @@ public abstract class ParkingSpot {
         this.isSpotAvailable = true;
     }
 }
-

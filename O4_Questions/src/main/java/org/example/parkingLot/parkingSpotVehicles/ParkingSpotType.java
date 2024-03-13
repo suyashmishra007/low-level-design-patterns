@@ -1,4 +1,4 @@
-package org.example.parkingLot.parking;
+package org.example.parkingLot.parkingSpotVehicles;
 
 public enum ParkingSpotType {
     Disabled,

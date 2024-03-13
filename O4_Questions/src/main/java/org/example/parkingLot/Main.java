@@ -1,8 +1,8 @@
 package org.example.parkingLot;
 import org.example.parkingLot.account.Admin;
-import org.example.parkingLot.parking.*;
-import org.example.parkingLot.parkingVehicles.CarSpot;
-import org.example.parkingLot.parkingVehicles.MotorcycleSpot;
+import org.example.parkingLot.parkingSpotVehicles.CarSpot;
+import org.example.parkingLot.parkingSpotVehicles.MotorcycleSpot;
+import org.example.parkingLot.parkingSpotVehicles.ParkingSpot;
 import org.example.parkingLot.vehicle.Car;
 import org.example.parkingLot.vehicle.MotorCycle;
 
@@ -16,20 +16,20 @@ public class Main {
         // Creating Admin account
         Admin admin = new Admin("Jack", "Pass12345");
 
-        // Adding Parking floors
+//         Adding Parking floors
         ParkingFloor parkingFloor1 = new ParkingFloor("PF1001");
         ParkingFloor parkingFloor2 = new ParkingFloor("PF1002");
         admin.addParkingFloor(parkingFloor1);
+
         admin.addParkingFloor(parkingFloor2);
 
-        // Adding Entry panels
         EntryPanel entryPanel1 = new EntryPanel("ENT001");
         EntryPanel entryPanel2 = new EntryPanel("ENT002");
         admin.addEntrancePanel(entryPanel1);
         admin.addEntrancePanel(entryPanel2);
-
-
-        // Adding Exit panels
+//
+//
+//         Adding Exit panels
         ExitPanel exitPanel1 = new ExitPanel("EXT001");
         ExitPanel exitPanel2 = new ExitPanel("EXT002");
         admin.addExitPanel(exitPanel1);
@@ -44,34 +44,34 @@ public class Main {
                 firstFloorID = firstFloor.getParkingFloorID();
             }
         }
-
+//
         // Adding Parking spots to the floor
-        CarSpot carParkingSpot1 = new CarSpot("CPS1001");
+        ParkingSpot carParkingSpot1 = new CarSpot("CPS1001");
         admin.addParkingSpot(firstFloorID, carParkingSpot1);
-        CarSpot carParkingSpot2 = new CarSpot("CPS1002");
+        ParkingSpot carParkingSpot2 = new CarSpot("CPS1002");
         admin.addParkingSpot(firstFloorID, carParkingSpot2);
-        MotorcycleSpot bikeParkingSpot1 = new MotorcycleSpot("MSP1001");
+        ParkingSpot bikeParkingSpot1 = new MotorcycleSpot("MSP1001");
         admin.addParkingSpot(firstFloorID, bikeParkingSpot1);
-        MotorcycleSpot bikeParkingSpot2 = new MotorcycleSpot("MSP1002");
+        ParkingSpot bikeParkingSpot2 = new MotorcycleSpot("MSP1002");
         admin.addParkingSpot(firstFloorID, bikeParkingSpot2);
 
-
-        // Creating vehicles
+        System.out.println(parkingLot.getListOfParkingFloor());
+//
+//         Creating vehicles
         Car car1 = new Car("TN23890");
         Car car2 = new Car("TN99234");
         MotorCycle bike = new MotorCycle("TN34909");
 
-
+//
         // Call the display board
         parkingFloor1.showDisplayBoard();
 
         // Park the vehicle
-        ParkingTicket ticketForCar1 = entryPanel1.getParkingTicket(car1);
-        System.out.println("*** Parking ticket for car1 *** \n" +  ticketForCar1);
-
-        // Checkout the vehicle
-        ticketForCar1 = exitPanel2.checkout(ticketForCar1);
-        System.out.println("*** Parking ticket for car1 *** \n" + ticketForCar1);
+//        ParkingTicket ticketForCar1 = entryPanel1.getParkingTicket(car1);
+//        System.out.println("*** Parking ticket for car1 *** \n" +  ticketForCar1);
+//        // Checkout the vehicle
+//        ticketForCar1 = exitPanel2.checkout(ticketForCar1);
+//        System.out.println("*** Parking ticket for car1 *** \n" + ticketForCar1);
     }
 }
 

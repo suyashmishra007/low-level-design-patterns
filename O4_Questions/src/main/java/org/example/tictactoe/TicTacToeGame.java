@@ -35,7 +35,7 @@ public class TicTacToeGame {
 
             gameBoard.printBoard();
 
-            List<Pair<Integer, Integer>> freeSpaces =  gameBoard.getFreeCells();
+            List<PairUtil> freeSpaces =  gameBoard.getFreeCells();
             if(freeSpaces.isEmpty()) {
                 noWinner = false;
                 continue;

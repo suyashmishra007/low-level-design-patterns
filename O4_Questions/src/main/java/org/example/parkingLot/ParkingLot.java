@@ -1,5 +1,7 @@
-package org.example.parkingLot.parking;
+package org.example.parkingLot;
 
+
+import org.example.parkingLot.parkingSpotVehicles.ParkingSpot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,21 @@ import java.util.List;
 public class ParkingLot {
     private static ParkingLot instance;
     private List<ParkingFloor> parkingFloors;
+
+    public void setParkingFloors(List<ParkingFloor> parkingFloors) {
+        this.parkingFloors = parkingFloors;
+    }
+
     private List<EntryPanel> entryPanels;
+
+    public void setEntryPanels(List<EntryPanel> entryPanels) {
+        this.entryPanels = entryPanels;
+    }
+
+    public void setExitPanels(List<ExitPanel> exitPanels) {
+        this.exitPanels = exitPanels;
+    }
+
     private List<ExitPanel> exitPanels;
 
     private ParkingLot() {

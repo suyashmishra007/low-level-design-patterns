@@ -1,6 +1,4 @@
-package org.example.parkingLot.parkingVehicles;
-
-import org.example.parkingLot.parking.ParkingSpotType;
+package org.example.parkingLot.parkingSpotVehicles;
 
 public class MotorcycleSpot extends ParkingSpot{
     public MotorcycleSpot(String id) {

@@ -1,6 +1,8 @@
-package org.example.parkingLot.parking;
+package org.example.parkingLot;
 import org.example.parkingLot.vehicle.*;
 
+import java.time.LocalDateTime;
+import java.time.temporal.Temporal;
 import java.util.Date;
 import java.util.UUID;
 
@@ -10,7 +12,7 @@ public class ParkingTicket {
     private String vehicleRegisterNumber;
     private String parkingSpotID;
     private String parkingFloorID;
-    private Date startTime;
+    private LocalDateTime startTime;
     private Date endTime;
     private double amount;
 
@@ -23,16 +25,17 @@ public class ParkingTicket {
     }
 
     public ParkingTicket setStartTime() {
+        LocalDateTime currentDateTime = LocalDateTime.now();;
         this.startTime = currentDateTime;
         return this;
     }
 
-    public Date getStartTime() {
-        return this.startTime;
+    public Temporal getStartTime() {
+        return (Temporal) this.startTime;
     }
 
-    public Date getEndTime() {
-        return this.endTime;
+    public Temporal getEndTime() {
+        return (Temporal) this.endTime;
     }
 
     public double getAmount() {

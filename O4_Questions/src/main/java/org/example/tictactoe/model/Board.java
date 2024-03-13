@@ -1,5 +1,4 @@
 package org.example.tictactoe.model;
-import com.sun.tools.javac.util.Pair;
 
 import java.util.*;
 
@@ -18,13 +17,13 @@ public class Board {
         board[row][col] = piece;
         return true;
     }
-    public List<Pair<Integer, Integer>> getFreeCells() {
-        List<Pair<Integer, Integer>> freeCells = new ArrayList<>();
+    public List<PairUtil> getFreeCells() {
+        List<PairUtil> freeCells = new ArrayList<>();
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (board[i][j] == null) {
-                    Pair<Integer, Integer> rowColumn = new Pair<>(i, j);
+                    PairUtil rowColumn = new PairUtil(i, j);
                     freeCells.add(rowColumn);
                 }
             }
